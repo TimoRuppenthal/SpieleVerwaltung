@@ -24,4 +24,7 @@ public class Spiel {
     public String getSchwierigkeit() {
         return schwierigkeit;
     }
+    public int getErrungenschaften(){
+        return errungenschaften;
+    }
 }
