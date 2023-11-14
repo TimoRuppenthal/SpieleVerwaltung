@@ -21,8 +21,8 @@ public class SpieleRepositoryImpl implements SpieleRepository {
     }
 
     @Override
-    public void remove(Spiel spiel) {
-        repository.remove(spiel.getSpieleid());
+    public void remove(SpieleId spieleId) {
+        repository.remove(spieleId);
 
     }
 

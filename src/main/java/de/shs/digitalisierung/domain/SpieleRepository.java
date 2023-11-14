@@ -6,7 +6,7 @@ import java.util.List;
 public interface SpieleRepository {
     List<Spiel> getAll();
 
-    void remove(Spiel spiel);
+    void remove(SpieleId spieleId);
 
     void add(Spiel spiel);
 }

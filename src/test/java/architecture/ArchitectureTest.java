@@ -36,7 +36,7 @@ class ArchitectureTest {
     }
 
     @Test
-    @Disabled
+
     void validateAggregateRules()
     {
         aggregateRules(Main.class).validate();

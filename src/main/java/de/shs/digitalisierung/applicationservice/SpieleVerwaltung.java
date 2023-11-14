@@ -10,16 +10,19 @@ import java.util.List;
 public class SpieleVerwaltung {
     private final SpieleRepository spieleRepository;
 
-    public void add(Spiel spiel){
-        spieleRepository.add(spiel);
+    public void add(String name, String genre, String schwierigkeit, int errungenschaften, SpieleId spieleId){
+        spieleRepository.add(new Spiel(name, genre, schwierigkeit, errungenschaften, spieleId.spieleid()));
     }
     @SuppressWarnings("unused")
-    public void delete (Spiel spiel){
-        spieleRepository.remove(spiel);
+    public void delete (SpieleId spieleId){
+        spieleRepository.remove(spieleId);
     }
 
     public List<SpieleId> get(){
-        return spieleRepository.getAll().stream().map(Spiel::getSpieleid).toList();
+        return spieleRepository.getAll()
+                .stream()
+                .map(Spiel::getSpieleid)
+                .toList();
     }
     public SpieleVerwaltung (SpieleRepository spieleRepository){
         this.spieleRepository = spieleRepository;
