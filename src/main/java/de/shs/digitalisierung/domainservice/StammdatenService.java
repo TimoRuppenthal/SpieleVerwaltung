@@ -6,6 +6,11 @@ import de.shs.digitalisierung.domain.SpieleRepository;
 import java.util.List;
 
 public class StammdatenService {
+
+    private static final Spiel Portal = new Spiel("Portal", "Puzzle-Adventure", "schwer", 124);
+    private static final Spiel ItTakesTwo = new Spiel("ItTakesTwo", "Puzzle-Adventure", "leicht", 34);
+
+
     private final SpieleRepository spieleRepository;
 
     public StammdatenService(SpieleRepository spieleRepository){
@@ -13,12 +18,13 @@ public class StammdatenService {
     }
 
     public void initStammdaten(){
+
         List<Spiel> alleSpiele = spieleRepository.getAll();
-        if(!alleSpiele.contains(new Spiel("Portal", "Puzzle-Adventure", "schwer", 124))){
-            spieleRepository.add(new Spiel("Portal", "Puzzle-Adventure", "schwer", 124));
+        if(!alleSpiele.contains(Portal)){
+            spieleRepository.add(Portal);
         }
-        if(!alleSpiele.contains(new Spiel("ItTakesTwo", "Puzzle-Adventure", "einfach", 34))){
-            spieleRepository.add(new Spiel("ItTakesTwo", "Puzzle-Adventure", "einfach", 34));
+        if(!alleSpiele.contains(ItTakesTwo)){
+            spieleRepository.add(ItTakesTwo);
         }
         spieleRepository
                 .getAll()
