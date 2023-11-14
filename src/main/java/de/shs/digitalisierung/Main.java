@@ -4,6 +4,10 @@ import io.jexxa.core.JexxaMain;
 import io.jexxa.drivingadapter.rest.RESTfulRPCAdapter;
 import java.util.List;
 public class Main {
+    public String SpieleVerwaltung() {
+        return "SpieleVerwaltung";
+    }
+
     public static void main(String[] args) {
         SpieleVerwaltung spieleVerwaltung = new SpieleVerwaltung();
 
@@ -26,6 +30,7 @@ public class Main {
         jexxaMain
                 // Bind a REST adapter to expose parts of the application
                 .bind(RESTfulRPCAdapter.class).to(spieleVerwaltung)               // Get greetings: http://localhost:7501/HelloJexxa/greetings
+                .bind(RESTfulRPCAdapter.class).to(Main.class) // Get greetings: http://localhost:7501/HelloJexxa/greetings
                 .bind(RESTfulRPCAdapter.class).to(jexxaMain.getBoundedContext())  // Get stats: http://localhost:7501/BoundedContext/isRunning
 
                 // Run your application until Ctrl-C is pressed
