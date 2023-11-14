@@ -8,10 +8,6 @@ import java.util.List;
 @DomainService
 public class StammdatenService {
 
-    private static final Spiel Portal = new Spiel("Portal", "Puzzle-Adventure", "schwer", 124, 1);
-    private static final Spiel ItTakesTwo = new Spiel("ItTakesTwo", "Puzzle-Adventure", "leicht", 34, 2);
-
-
     private final SpieleRepository spieleRepository;
 
     public StammdatenService(SpieleRepository spieleRepository){
@@ -20,12 +16,15 @@ public class StammdatenService {
 
     public void initStammdaten(){
 
+        final Spiel portal = new Spiel("Portal", "Puzzle-Adventure", "schwer", 124, 1);
+        final Spiel itTakesTwo = new Spiel("ItTakesTwo", "Puzzle-Adventure", "leicht", 34, 2);
+
         List<Spiel> alleSpiele = spieleRepository.getAll();
-        if(!alleSpiele.contains(Portal)){
-            spieleRepository.add(Portal);
+        if(!alleSpiele.contains(portal)){
+            spieleRepository.add(portal);
         }
-        if(!alleSpiele.contains(ItTakesTwo)){
-            spieleRepository.add(ItTakesTwo);
+        if(!alleSpiele.contains(itTakesTwo)){
+            spieleRepository.add(itTakesTwo);
         }
         spieleRepository
                 .getAll()

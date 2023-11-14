@@ -4,12 +4,13 @@ import io.jexxa.infrastructure.RepositoryManager;
 import io.jexxa.infrastructure.persistence.repository.IRepository;
 import de.shs.digitalisierung.domain.Spiel;
 import de.shs.digitalisierung.domain.SpieleRepository;
+import de.shs.digitalisierung.domain.SpieleId;
 
 import java.util.List;
 import java.util.Properties;
 @DrivenAdapter
 public class SpieleRepositoryImpl implements SpieleRepository {
-    private final IRepository<Spiel, Integer> repository;
+    private final IRepository<Spiel, SpieleId> repository;
 
     public SpieleRepositoryImpl(Properties properties){
         this.repository = RepositoryManager.getRepository(Spiel.class, Spiel::getSpieleid, properties);
