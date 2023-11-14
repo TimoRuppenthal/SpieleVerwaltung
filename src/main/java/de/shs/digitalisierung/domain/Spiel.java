@@ -6,19 +6,12 @@ import java.util.Objects;
 
 @Aggregate
 public class Spiel {
-    private final String name;
-    private final String genre;
-    private final String schwierigkeit;
-    private final int errungenschaften;
-
+    private final SpielDaten spielDaten;
     private final SpieleId spieleid;
 
-    public Spiel(String name, String genre, String schwierigkeit, int errungenschaften, int spieleid) {
-        this.name = name;
-        this.genre = genre;
-        this.schwierigkeit = schwierigkeit;
-        this.errungenschaften = errungenschaften;
-        this.spieleid = new SpieleId(spieleid);
+    public Spiel(SpielDaten spielDaten, SpieleId spieleId) {
+        this.spielDaten = spielDaten;
+        this.spieleid = spieleId;
     }
     @Override
     public boolean equals(Object o) {
@@ -28,24 +21,19 @@ public class Spiel {
         return Objects.equals(getSpieleid(), spiel.getSpieleid());
     }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(name, genre,schwierigkeit,errungenschaften,spieleid);
-    }
-
     public String getName() {
-        return name;
+        return spielDaten.name();
     }
 
     public String getGenre() {
-        return genre;
+        return spielDaten.genre();
     }
 
     public String getSchwierigkeit() {
-        return schwierigkeit;
+        return spielDaten.schwierigkeit();
     }
     public int getErrungenschaften(){
-        return errungenschaften;
+        return spielDaten.errungenschaften();
     }
     @AggregateID
     public SpieleId getSpieleid(){
