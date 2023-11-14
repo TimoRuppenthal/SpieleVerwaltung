@@ -1,4 +1,7 @@
-package de.shs.digitalisierung.domain;
+package de.shs.digitalisierung.applicationservice;
+
+import de.shs.digitalisierung.domain.Spiel;
+import de.shs.digitalisierung.domain.SpieleRepository;
 
 import java.util.List;
 

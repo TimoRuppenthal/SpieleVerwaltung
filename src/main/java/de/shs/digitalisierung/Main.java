@@ -3,7 +3,7 @@ package de.shs.digitalisierung;
 import io.jexxa.core.JexxaMain;
 import io.jexxa.drivingadapter.rest.RESTfulRPCAdapter;
 import de.shs.digitalisierung.domain.SpieleRepository;
-import de.shs.digitalisierung.domain.SpieleVerwaltung;
+import de.shs.digitalisierung.applicationservice.SpieleVerwaltung;
 import de.shs.digitalisierung.domainservice.StammdatenService;
 import de.shs.digitalisierung.infrastructure.drivenadapter.persistence.SpieleRepositoryImpl;
 import java.util.Properties;
