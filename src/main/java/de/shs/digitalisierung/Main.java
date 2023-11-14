@@ -12,8 +12,14 @@ public class Main {
 
         spieleVerwaltung.add(portal);
         spieleVerwaltung.add(ittakestwo);
+        spieleVerwaltung.delete(ittakestwo);
+
         List<Spiel> alleSpiele = spieleVerwaltung.get();
         alleSpiele.forEach(element -> System.out.println(element.getName()));
+        alleSpiele.forEach(element -> System.out.println(element.getGenre()));
+        alleSpiele.forEach(element -> System.out.println(element.getSchwierigkeit()));
+        alleSpiele.forEach(element -> System.out.println(element.getErrungenschaften()));
+
 
         var jexxaMain = new JexxaMain(Main.class);
 
