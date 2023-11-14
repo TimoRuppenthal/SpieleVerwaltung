@@ -1,10 +1,11 @@
 package de.shs.digitalisierung.domainservice;
 
+import io.jexxa.addend.applicationcore.DomainService;
 import de.shs.digitalisierung.domain.Spiel;
 import de.shs.digitalisierung.domain.SpieleRepository;
 
 import java.util.List;
-
+@DomainService
 public class StammdatenService {
 
     private static final Spiel Portal = new Spiel("Portal", "Puzzle-Adventure", "schwer", 124, 1);

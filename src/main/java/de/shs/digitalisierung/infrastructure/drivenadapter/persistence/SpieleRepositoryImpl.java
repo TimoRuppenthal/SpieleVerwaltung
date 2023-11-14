@@ -1,4 +1,5 @@
 package de.shs.digitalisierung.infrastructure.drivenadapter.persistence;
+import io.jexxa.addend.infrastructure.DrivenAdapter;
 import io.jexxa.infrastructure.RepositoryManager;
 import io.jexxa.infrastructure.persistence.repository.IRepository;
 import de.shs.digitalisierung.domain.Spiel;
@@ -6,7 +7,7 @@ import de.shs.digitalisierung.domain.SpieleRepository;
 
 import java.util.List;
 import java.util.Properties;
-
+@DrivenAdapter
 public class SpieleRepositoryImpl implements SpieleRepository {
     private final IRepository<Spiel, Integer> repository;
 
