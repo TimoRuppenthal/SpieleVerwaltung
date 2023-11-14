@@ -6,23 +6,26 @@ public class Spiel {
     private final String schwierigkeit;
     private final int errungenschaften;
 
-    public Spiel(String name, String genre, String schwierigkeit, int errungenschaften) {
+    private final int spieleid;
+
+    public Spiel(String name, String genre, String schwierigkeit, int errungenschaften, int spieleid) {
         this.name = name;
         this.genre = genre;
         this.schwierigkeit = schwierigkeit;
         this.errungenschaften = errungenschaften;
+        this.spieleid = spieleid;
     }
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Spiel spiel = (Spiel) o;
-        return Objects.equals(name, spiel.name) && Objects.equals(genre, spiel.genre) && Objects.equals(schwierigkeit, spiel.schwierigkeit) && Objects.equals(errungenschaften, spiel.errungenschaften);
+        return Objects.equals(name, spiel.name) && Objects.equals(genre, spiel.genre) && Objects.equals(schwierigkeit, spiel.schwierigkeit) && Objects.equals(errungenschaften, spiel.errungenschaften)&& Objects.equals(spieleid, spiel.spieleid);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, genre,schwierigkeit,errungenschaften);
+        return Objects.hash(name, genre,schwierigkeit,errungenschaften,spieleid);
     }
 
     public String getName() {
@@ -38,5 +41,8 @@ public class Spiel {
     }
     public int getErrungenschaften(){
         return errungenschaften;
+    }
+    public int getSpieleid(){
+        return spieleid;
     }
 }

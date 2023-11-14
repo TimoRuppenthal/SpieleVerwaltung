@@ -6,12 +6,12 @@ import de.shs.digitalisierung.domain.SpieleRepository;
 import de.shs.digitalisierung.domain.SpieleVerwaltung;
 import de.shs.digitalisierung.domainservice.StammdatenService;
 import de.shs.digitalisierung.infrastructure.drivenadapter.persistence.SpieleRepositoryImpl;
-
+import java.util.Properties;
 public class Main {
 
     @SuppressWarnings("java:S106") //Okey da Demoprojekt
     public static void main(String[] args) {
-        SpieleRepository spieleRepository = new SpieleRepositoryImpl();
+        SpieleRepository spieleRepository = new SpieleRepositoryImpl(new Properties());
         SpieleVerwaltung spieleVerwaltung = new SpieleVerwaltung(spieleRepository);
 
         StammdatenService stammdatenService = new StammdatenService(spieleRepository);
