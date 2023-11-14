@@ -1,4 +1,6 @@
-package de.shs.digitalisierung;
+package de.shs.digitalisierung.domain;
+
+import de.shs.digitalisierung.domain.Spiel;
 
 import java.util.ArrayList;
 import java.util.List;

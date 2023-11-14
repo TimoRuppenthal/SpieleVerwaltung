@@ -1,7 +1,11 @@
 package de.shs.digitalisierung;
 
+import de.shs.digitalisierung.domain.Spiel;
+import de.shs.digitalisierung.domain.SpieleVerwaltung;
 import io.jexxa.core.JexxaMain;
 import io.jexxa.drivingadapter.rest.RESTfulRPCAdapter;
+import de.shs.digitalisierung.domain.Spiel;
+import de.shs.digitalisierung.domain.SpieleVerwaltung;
 import java.util.List;
 public class Main {
     public String SpieleVerwaltung() {

@@ -1,4 +1,4 @@
-package de.shs.digitalisierung;
+package de.shs.digitalisierung.domain;
 import java.util.Objects;
 public class Spiel {
     private final String name;
