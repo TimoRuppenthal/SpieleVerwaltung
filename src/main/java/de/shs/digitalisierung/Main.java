@@ -1,19 +1,20 @@
 package de.shs.digitalisierung;
 
-import de.shs.digitalisierung.domain.Spiel;
-import de.shs.digitalisierung.domain.SpieleVerwaltung;
 import io.jexxa.core.JexxaMain;
 import io.jexxa.drivingadapter.rest.RESTfulRPCAdapter;
 import de.shs.digitalisierung.domain.Spiel;
+import de.shs.digitalisierung.domain.SpieleRepository;
 import de.shs.digitalisierung.domain.SpieleVerwaltung;
+import de.shs.digitalisierung.infrastructure.drivenadapter.persistence.SpieleRepositoryImpl;
 import java.util.List;
 public class Main {
     public String SpieleVerwaltung() {
         return "SpieleVerwaltung";
     }
-
+    @SuppressWarnings("java:S106") //Okey da Demoprojekt
     public static void main(String[] args) {
-        SpieleVerwaltung spieleVerwaltung = new SpieleVerwaltung();
+        SpieleRepository spieleRepository = new SpieleRepositoryImpl();
+        SpieleVerwaltung spieleVerwaltung = new SpieleVerwaltung(spieleRepository);
 
         Spiel portal = new Spiel("Portal", "Puzzle-Adventure", "schwer", 124);
         Spiel ittakestwo = new Spiel("ItTakesTwo", "Puzzle-Adventure", "einfach", 34);

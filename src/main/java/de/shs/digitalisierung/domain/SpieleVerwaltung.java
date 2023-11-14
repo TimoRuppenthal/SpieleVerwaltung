@@ -1,22 +1,22 @@
 package de.shs.digitalisierung.domain;
 
-import de.shs.digitalisierung.domain.Spiel;
-
-import java.util.ArrayList;
 import java.util.List;
 
 public class SpieleVerwaltung {
-    private final List<Spiel> spieleList = new ArrayList<>();
+    private final SpieleRepository spieleRepository;
 
     public void add(Spiel spiel){
-        spieleList.add(spiel);
+        spieleRepository.add(spiel);
     }
-
+    @SuppressWarnings("unused")
     public void delete (Spiel spiel){
-        spieleList.remove(spiel);
+        spieleRepository.remove(spiel);
     }
 
     public List<Spiel> get(){
-        return spieleList;
+        return spieleRepository.getAll();
+    }
+    public SpieleVerwaltung (SpieleRepository spieleRepository){
+        this.spieleRepository = spieleRepository;
     }
 }
