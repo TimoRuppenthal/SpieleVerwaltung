@@ -1,31 +1,32 @@
 package de.shs.digitalisierung.applicationservice;
 
 import io.jexxa.addend.applicationcore.ApplicationService;
-import de.shs.digitalisierung.domain.Spiel;
-import de.shs.digitalisierung.domain.SpieleRepository;
-import de.shs.digitalisierung.domain.SpieleId;
-import de.shs.digitalisierung.domain.SpielDaten;
+import de.shs.digitalisierung.domain.*;
 
 import java.util.List;
 @ApplicationService
 public class SpieleVerwaltung {
     private final SpieleRepository spieleRepository;
 
-    public void add(SpieleId spieleId, SpielDaten spielDaten){
-        spieleRepository.add(new Spiel(spielDaten, spieleId));
+    public void add(EMailAdresse eMailAdresse, SpielDaten spielDaten){
+        spieleRepository.add(new Spiel(spielDaten, eMailAdresse));
     }
     @SuppressWarnings("unused")
-    public void delete (SpieleId spieleId){
-        spieleRepository.remove(spieleId);
+    public void delete (EMailAdresse eMailAdresse){
+        spieleRepository.remove(eMailAdresse);
     }
 
-    public List<SpieleId> get(){
+    public List<EMailAdresse> get(){
         return spieleRepository.getAll()
                 .stream()
-                .map(Spiel::getSpieleid)
+                .map(Spiel::getEMailAdresse)
                 .toList();
     }
     public SpieleVerwaltung (SpieleRepository spieleRepository){
         this.spieleRepository = spieleRepository;
+    }
+    public void registriere(EMailAdresse eMailAdresse, VerifizierungsCode verifizierungsCode){
+    }
+    public void verifiziere(EMailAdresse eMailAdresse, VerifizierungsCode verifizierungsCode){
     }
 }
