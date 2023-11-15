@@ -34,4 +34,9 @@ public class SpieleVerwaltung {
         add(eMailAdresse,registrierungsDaten.getSpielDaten());
         registrierungsDatenRepository.remove(eMailAdresse);
     }
+    public void aktualisiereSpielDaten(EMailAdresse eMailAdresse, SpielDaten spielDaten){
+        Spiel spiel = spieleRepository.get(eMailAdresse).orElseThrow();
+        spiel.setSpielDaten(spielDaten);
+        spieleRepository.update(spiel);
+    }
 }

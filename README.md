@@ -5,6 +5,7 @@ Ein Projekt um die Grundlagen der Software-Entwicklung zu lernen. Dieses Projekt
 * Hinzufügen eines Spiels in die Spieleverwaltung
 * Löschen eines Spiels aus der Spieleverwaltung
 * Abfragen aller Spiele aus der SpieleVerwaltung
+* Die SpielDaten eines Spiels können aktualisiert werden
 
 [User-Story Spiel registrieren] Als Manager der SpieleVerwaltung möchte ich, dass neue Spiele beim Hinzufügen in die SpieleVerwaltung registriert werden müssen, damit diese automatisiert verifiziert werden können.
 * Bei der Registrierung muss eine gültige E-Mail-Adresse und die SpielDaten angegeben werden

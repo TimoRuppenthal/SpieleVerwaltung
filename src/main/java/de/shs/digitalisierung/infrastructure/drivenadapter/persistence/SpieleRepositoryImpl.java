@@ -7,6 +7,7 @@ import de.shs.digitalisierung.domain.Spiel;
 import de.shs.digitalisierung.domain.SpieleRepository;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.Properties;
 @DrivenAdapter
 public class SpieleRepositoryImpl implements SpieleRepository {
@@ -30,5 +31,11 @@ public class SpieleRepositoryImpl implements SpieleRepository {
     public void add(Spiel spiel) {
         repository.add(spiel);
 
+    }
+    public Optional<Spiel> get(EMailAdresse eMailAdresse){
+        return repository.get(eMailAdresse);
+    }
+    public void update(Spiel spiel){
+        repository.update(spiel);
     }
 }
