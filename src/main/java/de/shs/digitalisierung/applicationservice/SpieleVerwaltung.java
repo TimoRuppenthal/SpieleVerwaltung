@@ -2,7 +2,7 @@ package de.shs.digitalisierung.applicationservice;
 
 import io.jexxa.addend.applicationcore.ApplicationService;
 import de.shs.digitalisierung.domain.*;
-
+import de.shs.digitalisierung.domainservice.VerifizierungsCodeSender;
 import java.util.List;
 @ApplicationService
 public class SpieleVerwaltung {
@@ -27,9 +27,9 @@ public class SpieleVerwaltung {
         this.spieleRepository = spieleRepository;
         this.registrierungsDatenRepository = registrierungsDatenRepository;
     }
-    public void registriere(EMailAdresse eMailAdresse, SpielDaten spielDaten){registrierungsDatenRepository.add(new RegistrierungsDaten(eMailAdresse, spielDaten)); //TODO: Bestätigungscode verschicken
+    public void registriere(EMailAdresse eMailAdresse, SpielDaten spielDaten){registrierungsDatenRepository.add(new RegistrierungsDaten(eMailAdresse, spielDaten));
     }
-    public void verifiziere(EMailAdresse eMailAdresse, VerifizierungsCode verifizierungsCode) throws UngueltigerVerifizierungsCode{RegistrierungsDaten registrierungsDaten = registrierungsDatenRepository.get(eMailAdresse);
+    public void verifiziere(EMailAdresse eMailAdresse, VerifizierungsCode verifizierungsCode) throws UngueltigerVerifizierungsCode{RegistrierungsDaten registrierungsDaten = registrierungsDatenRepository.get(eMailAdresse).orElseThrow();
         registrierungsDaten.verifiziere(verifizierungsCode);
         add(eMailAdresse,registrierungsDaten.getSpielDaten());
         registrierungsDatenRepository.remove(eMailAdresse);

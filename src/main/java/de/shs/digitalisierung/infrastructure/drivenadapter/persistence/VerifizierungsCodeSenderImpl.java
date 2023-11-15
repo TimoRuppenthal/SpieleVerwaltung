@@ -13,7 +13,7 @@ import static io.jexxa.infrastructure.MessageSenderManager.getMessageSender;
 public class VerifizierungsCodeSenderImpl implements VerifizierungsCodeSender {
 
 
-    public static final String TOPIC = "InstrumentenVerifizierungsEmail";
+    public static final String TOPIC = "SpieleVerifizierungsEmail";
     private final MessageSender messageSender;
 
     public VerifizierungsCodeSenderImpl(Properties properties){

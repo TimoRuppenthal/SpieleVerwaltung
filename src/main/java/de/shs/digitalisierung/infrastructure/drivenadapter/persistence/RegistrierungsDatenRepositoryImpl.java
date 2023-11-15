@@ -9,6 +9,7 @@ import de.shs.digitalisierung.domain.RegistrierungsDaten;
 import de.shs.digitalisierung.domain.RegistrierungsDatenRepository;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.Properties;
 
 @DrivenAdapter
@@ -31,9 +32,9 @@ public class RegistrierungsDatenRepositoryImpl implements RegistrierungsDatenRep
         repository.add(registrierungsDaten);
     }
 
-    public RegistrierungsDaten get(EMailAdresse eMailAdresse) {
+    public Optional<RegistrierungsDaten> get(EMailAdresse eMailAdresse) {
 
-        return repository.get(eMailAdresse).orElse(null);
+        return repository.get(eMailAdresse);
     }
 
 }

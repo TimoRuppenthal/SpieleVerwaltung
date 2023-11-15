@@ -17,6 +17,7 @@ public class RegistrierungsDaten {
         this.eMailAdresse = eMailAdresse;
         this.spielDaten = spielDaten;
         this.verifizierungsCode = new VerifizierungsCode(UUID.randomUUID().toString());
+        sendVerifizierungsCode();
     }
 
     public VerifizierungsCode getVerifizierungsCode() {
@@ -33,7 +34,7 @@ public class RegistrierungsDaten {
     }
 
     public void sendVerifizierungsCode(){
-        publish(new VerifizierungsCodeVerschickt(verifizierungsCode));
+        publish(new VerifizierungsCodeVerschickt(eMailAdresse, verifizierungsCode));
     }
     @AggregateID
     public EMailAdresse getEMailAdresse() {
