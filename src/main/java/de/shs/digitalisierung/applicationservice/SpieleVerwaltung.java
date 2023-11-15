@@ -7,6 +7,7 @@ import java.util.List;
 @ApplicationService
 public class SpieleVerwaltung {
     private final SpieleRepository spieleRepository;
+    private final RegistrierungsDatenRepository registrierungsDatenRepository;
 
     public void add(EMailAdresse eMailAdresse, SpielDaten spielDaten){
         spieleRepository.add(new Spiel(spielDaten, eMailAdresse));
@@ -22,11 +23,15 @@ public class SpieleVerwaltung {
                 .map(Spiel::getEMailAdresse)
                 .toList();
     }
-    public SpieleVerwaltung (SpieleRepository spieleRepository){
+    public SpieleVerwaltung (SpieleRepository spieleRepository, RegistrierungsDatenRepository registrierungsDatenRepository){
         this.spieleRepository = spieleRepository;
+        this.registrierungsDatenRepository = registrierungsDatenRepository;
     }
-    public void registriere(EMailAdresse eMailAdresse, VerifizierungsCode verifizierungsCode){
+    public void registriere(EMailAdresse eMailAdresse, SpielDaten spielDaten){registrierungsDatenRepository.add(new RegistrierungsDaten(eMailAdresse, spielDaten)); //TODO: Bestätigungscode verschicken
     }
-    public void verifiziere(EMailAdresse eMailAdresse, VerifizierungsCode verifizierungsCode){
+    public void verifiziere(EMailAdresse eMailAdresse, VerifizierungsCode verifizierungsCode) throws UngueltigerVerifizierungsCode{RegistrierungsDaten registrierungsDaten = registrierungsDatenRepository.get(eMailAdresse);
+        registrierungsDaten.verifiziere(verifizierungsCode);
+        add(eMailAdresse,registrierungsDaten.getSpielDaten());
+        registrierungsDatenRepository.remove(eMailAdresse);
     }
 }

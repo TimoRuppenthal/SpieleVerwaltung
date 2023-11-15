@@ -6,19 +6,19 @@ import java.util.Objects;
 
 @Aggregate
 public class Spiel {
-    private final SpielDaten spielDaten;
-    private final SpieleId spieleid;
+    private SpielDaten spielDaten;
+    private final EMailAdresse eMailAdresse;
 
-    public Spiel(SpielDaten spielDaten, SpieleId spieleId) {
+    public Spiel(SpielDaten spielDaten, EMailAdresse eMailAdresse) {
         this.spielDaten = spielDaten;
-        this.spieleid = spieleId;
+        this.eMailAdresse = eMailAdresse;
     }
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Spiel spiel = (Spiel) o;
-        return Objects.equals(getSpieleid(), spiel.getSpieleid());
+        return Objects.equals(getEMailAdresse(), spiel.getEMailAdresse());
     }
 
     public String getName() {
@@ -36,7 +36,10 @@ public class Spiel {
         return spielDaten.errungenschaften();
     }
     @AggregateID
-    public SpieleId getSpieleid(){
-        return spieleid;
+    public EMailAdresse getEMailAdresse(){
+        return eMailAdresse;
+    }
+    public void setSpielDaten(SpielDaten spielDaten){
+        this.spielDaten = spielDaten;
     }
 }

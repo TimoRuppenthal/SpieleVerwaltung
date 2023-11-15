@@ -1,19 +1,19 @@
 package de.shs.digitalisierung.infrastructure.drivenadapter.persistence;
+import de.shs.digitalisierung.domain.EMailAdresse;
 import io.jexxa.addend.infrastructure.DrivenAdapter;
 import io.jexxa.infrastructure.RepositoryManager;
 import io.jexxa.infrastructure.persistence.repository.IRepository;
 import de.shs.digitalisierung.domain.Spiel;
 import de.shs.digitalisierung.domain.SpieleRepository;
-import de.shs.digitalisierung.domain.SpieleId;
 
 import java.util.List;
 import java.util.Properties;
 @DrivenAdapter
 public class SpieleRepositoryImpl implements SpieleRepository {
-    private final IRepository<Spiel, SpieleId> repository;
+    private final IRepository<Spiel, EMailAdresse> repository;
 
     public SpieleRepositoryImpl(Properties properties){
-        this.repository = RepositoryManager.getRepository(Spiel.class, Spiel::getSpieleid, properties);
+        this.repository = RepositoryManager.getRepository(Spiel.class, Spiel::getEMailAdresse, properties);
     }
     @Override
     public List<Spiel> getAll() {
@@ -21,8 +21,8 @@ public class SpieleRepositoryImpl implements SpieleRepository {
     }
 
     @Override
-    public void remove(SpieleId spieleId) {
-        repository.remove(spieleId);
+    public void remove(EMailAdresse eMailAdresse) {
+        repository.remove(eMailAdresse);
 
     }
 
