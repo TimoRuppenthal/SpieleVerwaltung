@@ -1,10 +1,10 @@
-package de.shs.digitalisierung.infrastructure.drivenadapter.persistence;
-import de.shs.digitalisierung.domain.EMailAdresse;
+package org.example.infrastructure.drivenadapter.persistence;
+import org.example.domain.EMailAdresse;
 import io.jexxa.addend.infrastructure.DrivenAdapter;
 import io.jexxa.infrastructure.RepositoryManager;
 import io.jexxa.infrastructure.persistence.repository.IRepository;
-import de.shs.digitalisierung.domain.Spiel;
-import de.shs.digitalisierung.domain.SpieleRepository;
+import org.example.domain.Spiel;
+import org.example.domain.SpieleRepository;
 
 import java.util.List;
 import java.util.Optional;

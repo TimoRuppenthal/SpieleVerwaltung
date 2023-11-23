@@ -1,11 +1,9 @@
-package de.shs.digitalisierung.domain;
+package org.example.domain;
 
 import io.jexxa.addend.applicationcore.Aggregate;
 import io.jexxa.addend.applicationcore.AggregateID;
 
 import java.util.UUID;
-
-import static de.shs.digitalisierung.domain.DomainEventPublisher.publish;
 
 @Aggregate
 public class RegistrierungsDaten {
@@ -34,7 +32,7 @@ public class RegistrierungsDaten {
     }
 
     public void sendVerifizierungsCode(){
-        publish(new VerifizierungsCodeVerschickt(eMailAdresse, verifizierungsCode));
+        DomainEventPublisher.publish(new VerifizierungsCodeVerschickt(eMailAdresse, verifizierungsCode));
     }
     @AggregateID
     public EMailAdresse getEMailAdresse() {

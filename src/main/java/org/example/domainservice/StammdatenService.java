@@ -1,7 +1,10 @@
-package de.shs.digitalisierung.domainservice;
+package org.example.domainservice;
 
 import io.jexxa.addend.applicationcore.DomainService;
-import de.shs.digitalisierung.domain.*;
+import org.example.domain.EMailAdresse;
+import org.example.domain.Spiel;
+import org.example.domain.SpielDaten;
+import org.example.domain.SpieleRepository;
 
 import java.util.List;
 @DomainService

@@ -1,4 +1,4 @@
-package de.shs.digitalisierung.domain;
+package org.example.domain;
 
 import io.jexxa.addend.applicationcore.DomainEvent;
 @DomainEvent

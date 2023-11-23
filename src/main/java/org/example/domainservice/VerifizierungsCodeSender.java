@@ -1,7 +1,8 @@
-package de.shs.digitalisierung.domainservice;
+package org.example.domainservice;
 
 import io.jexxa.addend.applicationcore.InfrastructureService;
-import de.shs.digitalisierung.domain.VerifizierungsCodeVerschickt;
+import org.example.domain.VerifizierungsCodeVerschickt;
+
 @InfrastructureService
 public interface VerifizierungsCodeSender {
 

@@ -1,7 +1,6 @@
 package architecture;
 
-import de.shs.digitalisierung.Main;
-import org.junit.jupiter.api.Disabled;
+import org.example.Main;
 import org.junit.jupiter.api.Test;
 
 import static io.jexxa.jexxatest.architecture.ArchitectureRules.*;

@@ -1,9 +1,9 @@
-package de.shs.digitalisierung.infrastructure.drivenadapter.persistence;
+package org.example.infrastructure.drivenadapter.persistence;
 
 import io.jexxa.addend.infrastructure.DrivenAdapter;
 import io.jexxa.infrastructure.messaging.MessageSender;
-import de.shs.digitalisierung.domain.VerifizierungsCodeVerschickt;
-import de.shs.digitalisierung.domainservice.VerifizierungsCodeSender;
+import org.example.domain.VerifizierungsCodeVerschickt;
+import org.example.domainservice.VerifizierungsCodeSender;
 
 import java.util.Properties;
 

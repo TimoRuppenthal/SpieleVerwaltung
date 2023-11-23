@@ -1,12 +1,11 @@
-package de.shs.digitalisierung.infrastructure.drivenadapter.persistence;
+package org.example.infrastructure.drivenadapter.persistence;
 
-import io.jexxa.addend.applicationcore.Repository;
 import io.jexxa.addend.infrastructure.DrivenAdapter;
 import io.jexxa.infrastructure.RepositoryManager;
 import io.jexxa.infrastructure.persistence.repository.IRepository;
-import de.shs.digitalisierung.domain.EMailAdresse;
-import de.shs.digitalisierung.domain.RegistrierungsDaten;
-import de.shs.digitalisierung.domain.RegistrierungsDatenRepository;
+import org.example.domain.EMailAdresse;
+import org.example.domain.RegistrierungsDaten;
+import org.example.domain.RegistrierungsDatenRepository;
 
 import java.util.List;
 import java.util.Optional;
